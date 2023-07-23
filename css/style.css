@@ -15,6 +15,7 @@
   --footer-background-color: #2f303a;
   --logo-background-color: #2196f3;
   --studio-background-color-for-card: #ffffff;
+  --transition-value: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Studio page */
 body,
@@ -46,29 +47,23 @@ body {
 .global-header .nav-menu-container .navigation-menu {
   display: flex;
   justify-content: space-between;
-}
-.nav-menu-container .navigation-menu .studio-link {
-  margin-left: 42px;
-}
-
-.nav-menu-container .navigation-menu .portfolio-link {
-  margin-left: 58px;
-}
-
-.nav-menu-container .navigation-menu .contacts-link {
-  margin-left: 59px;
+  gap: 50px;
+  position: relative;
 }
 
 .global-header .top-contact-details {
   display: flex;
+  gap: 60px;
 }
 
-.global-header .top-contact-details .phone-number {
-  margin-left: 135px;
-}
-
-.global-header .top-contact-details .mail-address {
-  margin-left: 113px;
+.hover-active-bar {
+  visibility: hidden;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #2196f3;
+  position: relative;
+  top: 29px;
 }
 
 ul {
@@ -77,9 +72,9 @@ ul {
 
 ul a:link,
 ul a:visited,
-ul a:hover,
-ul a:active {
+ul a:hover {
   text-decoration: none;
+  transition: color var(--transition-value);
 }
 
 .webstudio-icon a:link,
@@ -102,16 +97,29 @@ ul a:active {
   letter-spacing: 0.78px;
 }
 
-.navigation-menu :active,
 .navigation-menu :focus,
 .navigation-menu :hover,
-.top-contact-details :active,
 .top-contact-details :hover,
 .top-contact-details :focus,
-.contact-details :active,
 .contact-details :hover,
 .contact-details :focus {
   color: var(--button-links-color);
+  transition: color var(--transition-value);
+}
+
+.header-link {
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 45px;
+  width: 100%;
+  height: 4px;
+  flex-shrink: 0;
+  background-color: #2196f3;
 }
 
 .top-contact-details a,
@@ -260,20 +268,39 @@ h2 {
   letter-spacing: 1.08px;
 }
 
-.what-we-do-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .photo-panel-section {
   margin-top: 50px;
   margin-bottom: 94px;
 }
 
-.photo-panel-section img {
-  margin-left: 30px;
+.photo-panel-board {
+  display: flex;
+  gap: 30px;
+}
+
+.photo-elements {
+  position: relative;
+  width: 370px;
+  height: 294px;
+  flex-shrink: 0;
+}
+
+.overlay-text {
+  background: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  bottom: 0;
+  width: 370px;
+  height: 70px;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: var(--text-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .our-team-section {
@@ -333,6 +360,7 @@ h2 {
 .social-icons :focus {
   background-color: var(--social-media-hover-background-color);
   color: var(--social-media-hover-text-color);
+  transition: color, var(--transition-value);
 }
 
 .social-media-icons svg {
@@ -401,10 +429,12 @@ h2 {
   flex-shrink: 0;
 }
 
-.logo-section :hover {
+.logo-section :hover,
+.logo-section :focus {
   color: var(--logo-background-color);
   border-color: var(--logo-background-color);
   fill: var(--logo-background-color);
+  transition: color, var(--transition-value);
 }
 
 .bottom-section {
@@ -494,6 +524,7 @@ h2 {
 .find-us .bottom-social-icons :hover,
 .find-us .bottom-social-icons :focus {
   background-color: var(--logo-background-color);
+  transition: background-color var(--transition-value);
 }
 
 .find-us .bottom-social-icons .bottom-social-media-icons .social-icon {
@@ -513,9 +544,10 @@ h2 {
   align-items: center;
 }
 
-hr {
+.portfolio-header-border {
   width: 1600px;
   height: 1px;
+  background-color: #ececec;
 }
 
 .button {
@@ -595,6 +627,9 @@ hr {
   line-height: 1.625em;
   letter-spacing: 0.48px;
   cursor: pointer;
+  transition: color, var(--transition-value);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
 .photo-section-board .album-section {
@@ -641,6 +676,7 @@ hr {
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
     0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  transition: box-shadow, var(--transition-value);
 }
 
 .photo-card :focus,
@@ -653,8 +689,9 @@ hr {
 
 .modal {
   position: fixed;
-  width: 100vw;
-  height: 60vw;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -666,17 +703,20 @@ hr {
   flex-shrink: 0;
   background-color: #fff;
   border-radius: 4px;
-  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   position: relative;
 }
 
 .is-hidden {
   visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .close-button {
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
   position: absolute;
   right: 8px;

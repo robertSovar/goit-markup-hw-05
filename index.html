@@ -27,24 +27,14 @@
       <!-- Navigation menu -->
       <nav class="nav-menu-container">
         <ul class="navigation-menu">
-          <li class="studio-link">
-            <a href="index.html" rel="noopener noreferrer nofollow">Studio</a>
+          <li class="header-link current">
+            <a href="index.html">Studio</a>
           </li>
-          <li class="portfolio-link">
-            <a
-              href="portfolio.html"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              >Portfolio</a
-            >
+          <li class="header-link">
+            <a href="portfolio.html">Portfolio</a>
           </li>
-          <li class="contacts-link">
-            <a
-              href="contacts.html"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              >Contacts</a
-            >
+          <li class="header-link">
+            <a href="contacts.html">Contacts</a>
           </li>
         </ul>
       </nav>
@@ -73,7 +63,9 @@
       <section class="hero-section">
         <h1>EFFECTIVE SOLUTIONS FOR YOUR BUSINESS</h1>
         <div>
-          <button data-modal-open class="request-button" >Request our service</button>
+          <button data-modal-open class="request-button">
+            Request our service
+          </button>
         </div>
       </section>
     </main>
@@ -142,21 +134,38 @@
     <section class="what-we-do-section">
       <h2>What we do</h2>
       <div class="photo-panel-section">
-        <img
-          src="images/fingersWritingCodeOnKeyboard.jpg"
-          alt="fingers writing code on keyboard"
-          width="370"
-        />
-        <img
-          src="images/watchingPhoneNearLaptop.jpg"
-          alt="watching phone near laptop"
-          width="370"
-        />
-        <img
-          src="images/drawingOnTheTablet.jpg"
-          alt="drawing on the tablet"
-          width="370"
-        />
+        <ul class="photo-panel-board">
+          <li class="photo-elements">
+            <img
+              src="images/fingersWritingCodeOnKeyboard.jpg"
+              alt="fingers writing code on keyboard"
+              width="370"
+            />
+            <div class="overlay-text">
+              <div>DESKTOP APPS</div>
+            </div>
+          </li>
+          <li class="photo-elements">
+            <img
+              src="images/watchingPhoneNearLaptop.jpg"
+              alt="watching phone near laptop"
+              width="370"
+            />
+            <div class="overlay-text">
+              <div>Mobile APPS</div>
+            </div>
+          </li>
+          <li class="photo-elements">
+            <img
+              src="images/drawingOnTheTablet.jpg"
+              alt="drawing on the tablet"
+              width="370"
+            />
+            <div class="overlay-text">
+              <div>DESIGN SOLUTIONS</div>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
     <!-- Our team section -->
@@ -419,7 +428,9 @@
       <footer class="bottom-contact-details">
         <div class="webstudio-section">
           <p class="webstudio-icon">
-            <a href="index.html">Web<span class="bottom-studio-text">Studio</span></a>
+            <a href="index.html"
+              >Web<span class="bottom-studio-text">Studio</span></a
+            >
           </p>
 
           <address class="work-place">695 Park Ave, NY 10065, USA</address>
@@ -480,15 +491,12 @@
       </footer>
     </div>
 
-<!-- Modal -->
-<div class="modal is-hidden" data-modal>
-  <div class="modal-content">
-    <button class="close-button" data-modal-close> &times;</button>
-  </div>
-</div>
-
-
-
+    <!-- Modal -->
+    <div class="modal is-hidden" data-modal>
+      <div class="modal-content">
+        <button class="close-button" data-modal-close>&times;</button>
+      </div>
+    </div>
 
     <script src="./js/modal.js"></script>
   </body>
