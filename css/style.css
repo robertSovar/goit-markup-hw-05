@@ -99,10 +99,10 @@ ul a:hover {
 
 .navigation-menu li a {
   color: #212121;
-font-family: var(--text-font-family);
-font-size: 14px;
-font-weight: 500;
-letter-spacing: 0.28px;
+  font-family: var(--text-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.28px;
 }
 
 .navigation-menu :focus,
@@ -738,6 +738,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 250ms ease;
 }
 
 .modal-content {
@@ -755,6 +756,7 @@ h2 {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  transition: 250ms ease;
 }
 
 .close-button {
